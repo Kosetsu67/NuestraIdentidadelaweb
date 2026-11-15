@@ -62,6 +62,31 @@
     .personajes { background: var(--oro-claro); }
     .personajes .grid .card { border-top-color: var(--verde); }
 
+    /* Proyectos del equipo */
+    .proyectos { background: var(--verde-oscuro); color: #fff; }
+    .proyectos h2 { color: var(--oro); }
+    .proyectos .intro { color: #e8f0ea; }
+    .proy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+    .proy { background: #fff; color: var(--texto); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; border-top: 6px solid var(--oro); }
+    .proy .num { background: var(--oro); color: var(--verde-oscuro); font-weight: 800; padding: 4px 14px; align-self: flex-start; border-radius: 0 0 10px 0; font-size: .85rem; }
+    .proy-body { padding: 18px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .proy h3 { color: var(--verde); }
+    .proy img { width: 100%; max-height: 260px; object-fit: cover; object-position: top; }
+    .proy ul { padding-left: 18px; font-size: .95rem; }
+    .proy .btn { margin-top: auto; align-self: flex-start; font-size: .9rem; padding: 10px 22px; border: 0; cursor: pointer; font-family: inherit; }
+    .btn.verde { background: var(--verde); color: #fff; }
+    .quiz { background: var(--oro-claro); color: var(--texto); border-radius: 12px; padding: 24px; margin-top: 30px; border: 3px solid var(--oro); }
+    .quiz h3 { color: var(--verde); margin: 6px 0 12px; }
+    .quiz input { padding: 10px 14px; border: 2px solid var(--verde); border-radius: 8px; margin-right: 10px; font-size: 1rem; }
+    .opts { display: grid; gap: 10px; margin-bottom: 14px; }
+    .opt { text-align: left; padding: 12px 16px; border: 2px solid var(--verde); background: #fff; border-radius: 8px; font-size: 1rem; cursor: pointer; font-family: inherit; }
+    .opt:hover:not(:disabled) { background: #e7f3ec; }
+    .opt.ok { background: #cdebd8; border-color: var(--verde); font-weight: 700; }
+    .opt.mal { background: #f8d7d7; border-color: #b33; }
+    .fb { margin-bottom: 12px; font-weight: 600; }
+    .equipo { margin-top: 36px; text-align: center; border-top: 2px solid var(--oro); padding-top: 20px; }
+    .equipo b { color: var(--oro); }
+
     footer { background: var(--verde-oscuro); color: #fff; text-align: center; padding: 30px 20px; border-top: 4px solid var(--oro); font-size: .9rem; }
     footer b { color: var(--oro); }
   </style>
@@ -76,6 +101,7 @@
       <li><a href="#identidad">Identidad</a></li>
       <li><a href="#vida">Vida estudiantil</a></li>
       <li><a href="#personajes">Personajes</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
     </ul>
   </nav>
 </header>
@@ -154,10 +180,109 @@
   </section>
 </div>
 
+<div class="proyectos" id="proyectos">
+  <section>
+    <h2>Proyectos del Equipo 2</h2>
+    <p class="intro">Grupo 116 · Plantel No. 2 “Nezahualcóyotl”. Tres trabajos que hicimos para conocer, contar y presumir nuestra prepa.</p>
+    <div class="proy-grid">
+
+      <article class="proy">
+        <span class="num">PROYECTO 1</span>
+        <img src="poster-historia-plantel.jpeg" alt="Póster Historia del plantel Nezahualcóyotl">
+        <div class="proy-body">
+          <h3>Póster: Historia del plantel</h3>
+          <p>Un póster sobre cómo nació nuestra prepa y qué significa la identidad escolar.</p>
+          <ul>
+            <li>1971: se coloca la primera piedra.</li>
+            <li>1972: inician clases con 500 alumnos, como Preparatoria Izcalli.</li>
+            <li>1973: recibe el nombre oficial de “Nezahualcóyotl”.</li>
+            <li>Años 70: la prensa la llamó “La Combativa Prepa Dos”.</li>
+          </ul>
+          <a class="btn" href="poster-historia-plantel.jpeg" target="_blank" rel="noopener">Ver póster completo</a>
+        </div>
+      </article>
+
+      <article class="proy">
+        <span class="num">PROYECTO 2</span>
+        <div class="proy-body">
+          <h3>Presentación: Lo mejor de la Prepa Neza</h3>
+          <p>Una presentación sobre lo que representa nuestro plantel: una comunidad para aprender, convivir y crecer.</p>
+          <ul>
+            <li>Espacios, actividades académicas, deportivas y culturales.</li>
+            <li>Nuestros valores: respeto, responsabilidad, compañerismo y esfuerzo.</li>
+            <li>Cierre: “¡Orgullosamente Prepa Neza!”</li>
+          </ul>
+          <a class="btn" href="lo-mejor-de-prepa-neza.pdf" target="_blank" rel="noopener">Abrir presentación (PDF)</a>
+        </div>
+      </article>
+
+      <article class="proy">
+        <span class="num">PROYECTO 3</span>
+        <div class="proy-body">
+          <h3>Juego Nezahualcóyotl</h3>
+          <p>Un reto de 6 preguntas sobre nuestro plantel. Lo programamos primero como algoritmo y después en Python. Aquí puedes jugarlo.</p>
+          <button class="btn" id="jugar" type="button">¡Jugar ahora!</button>
+          <a class="btn verde" href="juego-nezahualcoyotl.pdf" target="_blank" rel="noopener">Ver algoritmo y código (PDF)</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="quiz" id="quiz" hidden><div id="quizBody"></div></div>
+
+    <div class="equipo">
+      <p><b>Equipo 2 · Grupo 116 · 1.er semestre</b></p>
+      <p>Stephany Geraldine Carrillo Martínez · Absalón Misael Colin Orozco · Mateo Israde Contreras García · Estrella Fernanda Cortes Medina · Andrea de la Cruz Segura</p>
+    </div>
+  </section>
+</div>
+
 <footer>
-  <p><b>Identidad UAEMex</b> · Proyecto estudiantil · Hecho con orgullo verde y oro</p>
+  <p><b>Identidad UAEMex</b> · Proyecto del Equipo 2, Grupo 116 · Plantel No. 2 “Nezahualcóyotl” · Hecho con orgullo verde y oro</p>
   <p>Sitio informativo no oficial.</p>
 </footer>
 
+<script>
+const P=[
+{p:"¿Cómo se llama oficialmente nuestro plantel?",o:["Nezahualcóyotl","Sor Juana","Adolfo López"],m:"Nuestro plantel es Nezahualcóyotl, “el Rey Poeta”."},
+{p:"¿Qué animal representa a nuestra prepa?",o:["Coyote","Águila","Jaguar"],m:"Nezahualcóyotl significa “coyote hambriento”."},
+{p:"¿Qué mural famoso tiene el plantel?",o:["Mural esgrafiado","Mural azteca","Mural de la ciencia"],m:"El mural esgrafiado es símbolo de identidad."},
+{p:"¿En qué municipio está el plantel?",o:["Nezahualcóyotl","Toluca","Ecatepec"],m:"Estamos en Cd. Nezahualcóyotl, Estado de México."},
+{p:"¿Qué significa “Nezahualcóyotl” en náhuatl?",o:["Coyote hambriento","Rey poeta","Guerrero fuerte"],m:"Significa coyote hambriento, aunque también se le conoce como el Rey Poeta."},
+{p:"¿Cuál es una tradición de la prepa?",o:["Concurso de ofrendas","Carrera de caballos","Festival del maíz"],m:"Las ofrendas de Día de Muertos y los eventos culturales."}
+];
+const quiz=document.getElementById('quiz'), body=document.getElementById('quizBody');
+let nombre='', i=0, pts=0;
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;}
+function inicio(){
+  body.replaceChildren(el('h3','','Reto Prepa Neza'),el('p','','¿Cómo te llamas?'));
+  const inp=el('input');inp.placeholder='Tu nombre';inp.maxLength=30;
+  const b=el('button','btn','Comenzar');b.style.border='0';b.style.cursor='pointer';
+  b.onclick=()=>{nombre=inp.value.trim()||'estudiante';i=0;pts=0;pregunta();};
+  body.append(inp,b);quiz.hidden=false;quiz.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function pregunta(){
+  const q=P[i];
+  body.replaceChildren(el('small','','Pregunta '+(i+1)+'/'+P.length),el('h3','',q.p));
+  const fb=el('p','fb'), wrap=el('div','opts');
+  q.o.slice().sort(()=>Math.random()-.5).forEach(t=>{
+    const b=el('button','opt',t);
+    b.onclick=()=>{
+      wrap.querySelectorAll('button').forEach(x=>{x.disabled=true;if(x.textContent===q.o[0])x.classList.add('ok');});
+      if(t===q.o[0]){pts++;fb.textContent='¡Correcto! '+q.m;}else{b.classList.add('mal');fb.textContent='Incorrecto. '+q.m;}
+      const n=el('button','btn',i<P.length-1?'Siguiente':'Ver resultado');n.style.border='0';n.style.cursor='pointer';
+      n.onclick=()=>{i++;i<P.length?pregunta():fin();};body.append(n);
+    };
+    wrap.append(b);
+  });
+  body.append(wrap,fb);
+}
+function fin(){
+  body.replaceChildren(el('h3','','Resultado final: '+pts+' de '+P.length+' correctas'),
+    el('p','',pts>=4?'¡Felicidades '+nombre+'! Conoces bien tu Prepa Neza.':'Sigue conociendo tu plantel, ¡tú puedes mejorar!'));
+  const b=el('button','btn','Jugar de nuevo');b.style.border='0';b.style.cursor='pointer';b.onclick=inicio;body.append(b);
+}
+document.getElementById('jugar').onclick=inicio;
+</script>
 </body>
 </html>
